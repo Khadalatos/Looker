@@ -1,0 +1,162 @@
+{
+	"info": {
+		"_postman_id": "93155138-2cdb-44d5-a707-b5d6590019c0",
+		"name": "Base Laravel Project API - Passport",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Syahrul Safarila",
+							"type": "default"
+						},
+						{
+							"key": "email",
+							"value": "sysafarila.official@gmail.com",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "default"
+						},
+						{
+							"key": "password_confirmation",
+							"value": "password",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "base-laravel-project.test/api/register",
+					"host": [
+						"base-laravel-project",
+						"test"
+					],
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "sysafarila.official@gmail.com",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "base-laravel-project.test/api/login",
+					"host": [
+						"base-laravel-project",
+						"test"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get auth user data",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiZDhkNGEwNjcxNzNkYzQwMDUxMzg4M2I1NGYxMTJjYWIzMGMwYzE3NWVkZDgwZWQ0ZjI3NTBkMjY1ZmJkOTJlYTU2NDAxODdkZDViMWQ3NDciLCJpYXQiOjE2NDkwMTAxNTEuMDExMTMxLCJuYmYiOjE2NDkwMTAxNTEuMDExMTM2LCJleHAiOjE2NTAzMDYxNTAuOTg3MzI4LCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.u2s0ZUaMVSsQxtRSzLevNIQVQzgNPNJIWr_cbERClghAvro6yDTZ2rUkvUlqpJ_UAMtRTj-9h126QRlgPP_c5lor1kvCNlmAkqUOqkPCFb3X233Ct0ko2FKeHQxDM7Y_ekc3Yz2btuxVmT96-6in-hPJ-JF1AANPjS3QD215MLR_5wAiyfnq15wVD0_ELvtM-sF7uqviQTbrrAKQbOnW46KxHevTPtpMhV5-fKZX5DEhd-JSsQDTCDFNafXtT3d2xv5d4RmEi71-HTtWiBBIlGN1CI1giTAUS85qfRNRCHy47eS4a36dM1PyOf_yn7o-Hz5YN_2_pKnKRRAlKIabQqum3e5iy4fCVCH5Eq_3ucANA7TohnqROeFqPDXI4CSSsh0dmefS9FT4d4hJ0wni3F04cAkNL3Td5vtT9AqkOY5sgxeehbsAgwAZ5oRuRC_G5Xu2S2u6O7BedqiHbC9y-mHlv6DQXGbGTgrkDyFBXx6FOeFBnlwVCYwVL2Ga8ZdWVKYPyAsEeFvXVV5c8HqmCVMPswGEKiwQaX8Kjp_H_LUHFAGGmwbdy_Du9rr0X7E4k6DLsCeN7PqJqUKkIESjsx_z4_onNFW1RBEvIQoxntzpuA2DeY07CYNcffjwS3yhH_r730lIckTUTVVtBJanb0iAl9t9HvLYqJcfNJWmZzo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "base-laravel-project.test/api/user",
+					"host": [
+						"base-laravel-project",
+						"test"
+					],
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "refresh token",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiZDhkNGEwNjcxNzNkYzQwMDUxMzg4M2I1NGYxMTJjYWIzMGMwYzE3NWVkZDgwZWQ0ZjI3NTBkMjY1ZmJkOTJlYTU2NDAxODdkZDViMWQ3NDciLCJpYXQiOjE2NDkwMTAxNTEuMDExMTMxLCJuYmYiOjE2NDkwMTAxNTEuMDExMTM2LCJleHAiOjE2NTAzMDYxNTAuOTg3MzI4LCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.u2s0ZUaMVSsQxtRSzLevNIQVQzgNPNJIWr_cbERClghAvro6yDTZ2rUkvUlqpJ_UAMtRTj-9h126QRlgPP_c5lor1kvCNlmAkqUOqkPCFb3X233Ct0ko2FKeHQxDM7Y_ekc3Yz2btuxVmT96-6in-hPJ-JF1AANPjS3QD215MLR_5wAiyfnq15wVD0_ELvtM-sF7uqviQTbrrAKQbOnW46KxHevTPtpMhV5-fKZX5DEhd-JSsQDTCDFNafXtT3d2xv5d4RmEi71-HTtWiBBIlGN1CI1giTAUS85qfRNRCHy47eS4a36dM1PyOf_yn7o-Hz5YN_2_pKnKRRAlKIabQqum3e5iy4fCVCH5Eq_3ucANA7TohnqROeFqPDXI4CSSsh0dmefS9FT4d4hJ0wni3F04cAkNL3Td5vtT9AqkOY5sgxeehbsAgwAZ5oRuRC_G5Xu2S2u6O7BedqiHbC9y-mHlv6DQXGbGTgrkDyFBXx6FOeFBnlwVCYwVL2Ga8ZdWVKYPyAsEeFvXVV5c8HqmCVMPswGEKiwQaX8Kjp_H_LUHFAGGmwbdy_Du9rr0X7E4k6DLsCeN7PqJqUKkIESjsx_z4_onNFW1RBEvIQoxntzpuA2DeY07CYNcffjwS3yhH_r730lIckTUTVVtBJanb0iAl9t9HvLYqJcfNJWmZzo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "refresh_token",
+							"value": "def50200bb22a733dfee7e282b973a59f447f4dced55d1702d86120e770575a3295c79cfec85d6f340dd4120db0882e7f0a9b3778e995e1f27f514c6a5407de881540d3057f1c3312a4739ecd441a232c9a2a6bb6826405918ebbfcbe6bbeb5d25fc4f4941a9544aeea98992293e0deacbafd3a97ee0c54514f5acbf86f868a639371b160aa83bfd130bdf6167cd1111a8bccd03dc2d672aab8a207eec82bbb0c4966def1b36b2c378dc220e656476846aeff77ee13f1c2599b0cd43457c4353fee22533d521d61322e3da176e1de6312966550cc0c30a791f1f21e9843eb591013d705f12e4576a94b5e348453169280e596d7919128780b9f9be324ac4cc4511cd52ddc902928f514edd4b209ac58944ee46e83b25e1b004d85484a7706eeded862e07e9a3370bd2048c0e285d119b5e36bdbe5f96e0eb469f994f4dc9b77ced1fc77b5773245d9a006257ece28c2d1ea05cad4ac2b9937b086bfdb05a2731ef",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "base-laravel-project.test/api/refresh-token",
+					"host": [
+						"base-laravel-project",
+						"test"
+					],
+					"path": [
+						"api",
+						"refresh-token"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
