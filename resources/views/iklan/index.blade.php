@@ -67,7 +67,15 @@
                             @foreach ($lowongans as $lowongan)
                                 <tr data-identifier="{{ $lowongan->id }}">
                                     <td></td>
-                                    <td>{{ $lowongan->title }}</td>
+                                    <td>{{ $lowongan->jabatan }}</td>
+                                    <td>{{ $lowongan->gaji }}</td>
+                                    <td>{{ $lowongan->desk_pek }}</td>
+                                    <td>{{ $lowongan->skill }}</td>
+                                    <td>{{ $lowongan->edukasi }}</td>
+                                    <td>{{ $lowongan->pengalaman }}</td>
+                                    <td>{{ $lowongan->lowtersedia }}</td>
+                                    <td>{{ $lowongan->sifat }}</td>
+
                                     <td>{{ $lowongan->created_at->diffForHumans() }}</td>
                                     <td>
                                         <div class="d-flex flex-column flex-md-row justify-content-center"
@@ -96,7 +104,14 @@
                         <tfoot>
                             <tr>
                                 <th></th>
-                                <th>Title</th>
+                                <th>Jabatan</th>
+                                <th>Gaji</th>
+                                <th>Deskripsi Pekerjaan</th>
+                                <th>Keahlian</th>
+                                <th>Edukasi</th>
+                                <th>Pengalaman</th>
+                                <th>Lowongan Tersedia</th>
+                                <th>Sifat</th>
                                 <th>Created At</th>
                                 <th class="d-print-none">Options</th>
                             </tr>
