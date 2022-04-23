@@ -96,6 +96,22 @@
                         </li>
                     @endcan
                 @endcan
+                @can('contents control')
+                    <li class="nav-header text-uppercase">Daftar Lowongan</li>
+
+                    @can('blogs read')
+                        <li class="nav-item">
+                            <a href="{{ route('admin.lowongan.index') }}"
+                                class="nav-link {{ request()->routeIs('admin.lowongan.*') ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-blog"></i>
+                                <p>
+                                    Lowongan
+                                    {{-- <span class="right badge badge-danger">New</span> --}}
+                                </p>
+                            </a>
+                        </li>
+                    @endcan
+                @endcan
                 <li class="mt-2 nav-item pt-2" style="border-top: 1px solid #4f5962;">
                     <a href="{{ route('logout') }}" class="nav-link"
                         onclick="event.preventDefault();document.querySelector('#logoutForm').submit()">

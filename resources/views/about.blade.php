@@ -29,8 +29,8 @@
                             </div>
                             <div class="support-caption">
                                 <p class="pera-top">Layanan memasang iklan di Looker.com adalah gratis, silahkan login atau daftar terlebih dahulu agar bisa memasang iklan lowongan pekerjaan.</p>
-                                <a href="login/login.php" class="btn post-btn">Login</a>
-                                <a href="form_low.php" class="btn post-btn">Daftar Perusahaan</a>
+                                <a href="login/login" class="btn post-btn">Login</a>
+                                <a href="form_low" class="btn post-btn">Daftar Perusahaan</a>
                             </div>
                         </div>
                     </div>

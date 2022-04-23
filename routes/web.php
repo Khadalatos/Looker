@@ -6,6 +6,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\LowonganController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,9 +20,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-})->name('landingpage');
+
+
+Route::get('/', [LowonganController::class,'index']
+)->name('landingpage');
+
+Route::get('/form_low', [LowonganController::class,'create']
+)->name('landingpage');
+Route::POST('/store', [LowonganController::class,'store']);
 
 Route::get('/carlow', function () {
     return view('job_listing');
@@ -30,6 +36,13 @@ Route::get('/carlow', function () {
 Route::get('/job_details', function () {
     return view('job_details');
 })->name('detil');
+
+Route::get('/about', function () {
+    return view('about');
+})->name('abot  ');
+
+
+
 
 Route::get('/dashboard', function () {
     return redirect()->route('admin.index');
@@ -47,6 +60,9 @@ Route::middleware(['auth', 'verified', 'can:admin access'])->prefix('admin')->na
 
     // blogs
     Route::resource('/blogs', BlogController::class);
+
+    // blogs
+    Route::resource('/lowongan', LowonganController::class);
 
     // bulk delete
     Route::delete('/bulk-delete/permissions', [PermissionController::class, 'massDelete'])->name('permissions.bulkDelete');

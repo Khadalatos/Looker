@@ -19,86 +19,59 @@
     <div class="form">
        <div class="kontainer">
            <div class="title">Form Lowongan Pekerjaan</div>
-           <form action="#">
+           <form action="/store" method="POST">
+            @csrf
                <div class="user-details">
-                   <div class="input-box">
-                       <span class="details">Nama Perusahaan</span>
-                           <input type="text" class="text" placeholder="Nama Perusahaan" required>
 
-                   </div>
-                   <div class="input-box">
-                    <span class="details">Deskripsi Perusahaan</span>
-                        <input type="text" class="text" placeholder="Deskripsi Perusahaan" required>
-
-                </div>
                 <div class="input-box">
-                    <span class="details">Lokasi</span>
-                        <input type="text" class="text" placeholder="Lokasi" required>
-
-                </div>
-                <div class="input-box">
-                    <span class="details">Pekerjaan yang Ditawarkan</span>
-                        <input type="text" class="text" placeholder="Pekerjaan yang ditawarkan" required>
+                    <span class="details">Jabatan</span>
+                        <input type="text" name="jabatan" class="text" placeholder="Pekerjaan yang ditawarkan" >
 
                 </div>
                 <div class="input-box">
                     <span class="details">Gaji</span>
-                        <input type="text" class="text" placeholder="Gaji" required>
+                        <input type="text" name="gaji" class="text" placeholder="Gaji" >
 
                 </div>
 
-                <div class="input-box">
-                    <span class="details">Batas Pendaftaran</span>
-                        <input type="text" class="text" placeholder="Batas Pendaftaran" required>
-
-                </div>
-                <div class="input-box">
-                    <span class="details">Website</span>
-                        <input type="text" class="text" placeholder="Website" required>
-
-                </div>
-                <div class="input-box">
-                    <span class="details">Email</span>
-                        <input type="text" class="text" placeholder="Email" required>
-
-                </div>
-                <div class="input-box">
-                    <span class="details">No Yang bisa dihubungi</span>
-                        <input type="text" class="text" placeholder="No Yang Bisa di Hubungi" required>
-
-                </div>
                 <div class="input-box">
                     <span class="details">Deskripsi Pekerjaan</span>
-                        <input type="text" class="text" placeholder="Deskripsi Pekerjaan" required>
+                        <textarea name="desk_pek" rows="4" cols="31" type="text" class="text" placeholder="Deskripsi Pekerjaan" ></textarea>
 
                 </div>
                 <div class="input-box">
                     <span class="details">Keahlian yang harus dimiliki</span>
-                        <input type="text" class="text" placeholder="Keahlian yang harus dimiliki" required>
+                        <input type="text" name="skill" class="text" placeholder="Keahlian yang harus dimiliki" >
 
                 </div>
                 <div class="input-box">
-                    <span class="details">Edukasi dan Pengalaman</span>
-                        <input type="text" class="text" placeholder="Edukasi dan Pengalaman" required>
+                    <span class="details">Edukasi</span>
+                        <input type="text" name="edukasi" class="text" placeholder="Edukasi Minimal" >
+
+                </div>
+                <div class="input-box">
+                    <span class="details">Pengalaman</span>
+                        <input type="text" name="pengalaman" class="text" placeholder="Pengalaman Kerja Minimal" >
 
                 </div>
                 <div class="input-box">
                     <span class="details">Lowongan yang Tersedia</span>
-                        <input type="text" class="text" placeholder="Jumlah Lowongan" required>
+                        <input type="text" name="lowtersedia" class="text" placeholder="Jumlah Lowongan" >
 
                 </div>
                 <div class="radio">
                     <span class="detil">Sifat Pekerjaan</span>
-                    <input type="radio" id="html" name="fav_language" value="HTML">
+                    <input type="radio" name="sifat" id="html" name="fav_language" value="Tetap">
                     <label for="html">Tetap</label><br>
-                    <input type="radio" id="css" name="fav_language" value="CSS">
+                    <input type="radio" name="sifat" id="css" name="fav_language" value="Paruh Waktu">
                     <label for="css">Paruh Waktu</label><br>
-                    <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+                    <input type="radio" name="sifat" id="javascript" name="fav_language" value="Remote">
                     <label for="javascript">Remote</label><br>
-                    <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+                    <input type="radio" name="sifat" id="javascript" name="fav_language" value="Freelance">
                     <label for="javascript">Freelance</label>
                 </div>
                </div>
+               <input type="submit" value="save">
            </form>
        </div>
     </div>
