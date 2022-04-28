@@ -29,9 +29,7 @@
             <div class="row mb-2">
                 <div class="col-sm-6 d-flex align-items-center">
                     <h1 class="m-0">Lowongan Perusahaan</h1>
-                    @can('blogs create')
-                        <a href="{{ route('admin.blogs.create') }}" class="material-icons-round">add</a>
-                    @endcan
+
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -81,11 +79,11 @@
                                         <div class="d-flex flex-column flex-md-row justify-content-center"
                                             style="gap: 0.5rem">
                                             @can('lowongan read')
-                                                <a href="{{ route('admin.blogs.show', $lowongan->id) }}"
+                                                <a href="{{ route('admin.lowongan.show', $lowongan->id) }}"
                                                     class="btn btn-sm btn-secondary">Preview</a>
                                             @endcan
                                             @can('lowongan update')
-                                                <a href="{{ route('admin.blogs.edit', $lowongan->id) }}"
+                                                <a href="{{ route('admin.lowongan.edit', $lowongan->id) }}"
                                                     class="btn btn-sm btn-secondary">Edit</a>
                                             @endcan
                                             @can('lowongan delete')

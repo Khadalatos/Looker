@@ -22,8 +22,9 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/', [LowonganController::class,'index']
-)->name('landingpage');
+Route::get('/', function () {
+    return view('index');
+})->name('detil');
 
 Route::get('/form_low', [LowonganController::class,'create']
 )->name('landingpage');
@@ -31,7 +32,7 @@ Route::POST('/store', [LowonganController::class,'store']);
 
 Route::get('/carlow', function () {
     return view('job_listing');
-})->name('Lowongan');
+})->name('dd');
 
 Route::get('/job_details', function () {
     return view('job_details');
@@ -40,9 +41,6 @@ Route::get('/job_details', function () {
 Route::get('/about', function () {
     return view('about');
 })->name('abot  ');
-
-
-
 
 Route::get('/dashboard', function () {
     return redirect()->route('admin.index');
@@ -61,7 +59,7 @@ Route::middleware(['auth', 'verified', 'can:admin access'])->prefix('admin')->na
     // blogs
     Route::resource('/blogs', BlogController::class);
 
-    // blogs
+    // lwoongan
     Route::resource('/lowongan', LowonganController::class);
 
     // bulk delete

@@ -18,6 +18,8 @@ class UserSeeder extends Seeder
         $superAdmin = User::create([
             'name' => 'Super Admin',
             'email' => 'super.admin@admin.com',
+            'desk_per'=>'anjaymabar',
+            'website'=>'anjaymabar.com',
             'password' => Hash::make('password'),
             'email_verified_at' => now()
         ]);
@@ -26,6 +28,8 @@ class UserSeeder extends Seeder
         $admin = User::create([
             'name' => 'Admin',
             'email' => 'admin@admin.com',
+            'desk_per'=>'anjaymabaru',
+            'website'=>'anjaymabaru.com',
             'password' => Hash::make('password'),
             'email_verified_at' => now()
         ]);

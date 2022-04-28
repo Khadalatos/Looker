@@ -15,7 +15,7 @@ class LowonganController extends Controller
     public function index()
     {
         $lowongans = Lowongan::all();
-        return view('iklan.index', compact('lowongans'));
+        return view('lowongan.index', compact('lowongans'));
     }
 
     /**
@@ -47,7 +47,9 @@ class LowonganController extends Controller
      */
     public function show($id)
     {
-        //
+        $lowongan = Lowongan::findOrFail($id);
+
+        return $lowongan;
     }
 
     /**
@@ -58,7 +60,9 @@ class LowonganController extends Controller
      */
     public function edit($id)
     {
-        //
+        $lowongan = Lowongan::findOrFail($id);
+
+        return view('lowongan.edit', compact('lowongan'));
     }
 
     /**
@@ -70,7 +74,32 @@ class LowonganController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'jabatan' => ['required', 'string'],
+            'gaji' => ['numeric'],
+            'desk_pek.' => ['string'],
+            'skill' => ['string'],
+            'edukasi' => ['string'],
+            'pengalaman' => ['string'],
+            'lowtersedia' => ['numeric'],
+            'sifat' => ['string']
+
+        ]);
+
+        $lowongan = Lowongan::findOrFail($id);
+        $lowongan->update([
+            'jabatan' => $request->jabatan,
+            'gaji' => $request->gaji,
+            'desk_pek' => $request->desk_pek,
+            'skill' => $request->skill,
+            'edukasi' => $request->edukasi,
+            'pengalaman' => $request->pengalaman,
+            'lowtersedia' => $request->lowtersedia,
+            'sifat' => $request->sifat,
+
+        ]);
+
+        return redirect()->route('admin.lowongan.index')->with('status', 'Lowongan updated !');
     }
 
     /**
@@ -81,6 +110,8 @@ class LowonganController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Lowongan::destroy($id);
+
+        return redirect()->route('admin.lowongan.index')->with('success', 'Postingan Terhapus layaknya keadilan !');
     }
 }
